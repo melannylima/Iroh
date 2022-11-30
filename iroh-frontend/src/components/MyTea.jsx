@@ -36,6 +36,7 @@ const MyTea = (props) => {
                 </tbody>
             </table>
             <Link to="/create" >Create</Link>
+            <button onClick={() => {props.logoutUser()}} >LOG OUT</button>
         </>
     )
 }

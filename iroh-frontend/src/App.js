@@ -76,6 +76,28 @@ const  App = () => {
     }
   }
 
+  const logoutUser = async () => {
+    
+    try {
+      const response = await fetch(baseURL +'/api/v1/user/logout', {
+        credentials: "include",
+        method:'GET',
+        headers:{}
+      })
+      
+        if(response.status === 200) {
+          navigate("/")
+          return response.json()
+        } else {
+          return []
+        }
+    }
+    catch (err) {
+      console.log('Error => ', err);
+    }
+         
+    }
+
   const register = async (e) => {
     e.preventDefault()
     console.log(e.target)
@@ -202,7 +224,7 @@ const  App = () => {
         <Route path ="/update" element={<Update updateTea={updateTea}/>} />
         <Route path="login" element={<Login loginUser={loginUser} />} />
         <Route path="register" element={<Register register={register} />} />
-        <Route path="il-mio" element={<MyTea myTeas={myTeas} />} />
+        <Route path="il-mio" element={<MyTea myTeas={myTeas} logoutUser={logoutUser} />} />
         <Route path="/il-mio/:id" element={<TeaView deleteTea={deleteTea} />} />
       </Routes>
       
