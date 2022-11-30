@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  background-color: #9CB380;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #F5EDF0;
+  color: #19647E;
+  font-size: 4vh;
+  height: 12vh;
+}
+
+NavLink, nav > a {
+  text-decoration: none;
+  padding: 5vh;
+}
+
+#home {
+  height: 55vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 4vh;
+}
